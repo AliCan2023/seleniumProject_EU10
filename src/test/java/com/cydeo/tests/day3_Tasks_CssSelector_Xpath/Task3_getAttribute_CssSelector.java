@@ -50,6 +50,5 @@ public class Task3_getAttribute_CssSelector {
 
 
 
-
     }
 }

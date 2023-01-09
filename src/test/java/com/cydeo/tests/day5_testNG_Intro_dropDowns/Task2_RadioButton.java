@@ -8,17 +8,19 @@ import org.openqa.selenium.WebElement;
 import java.util.concurrent.TimeUnit;
 
 public class Task2_RadioButton {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         //TC #2: Radiobutton handling
         //1. Open Chrome browser
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
         //2. Go to https://practice.cydeo.com/radio_buttons
         driver.get("https://practice.cydeo.com/radio_buttons");
 
         //3. Click to “Hockey” radio button
         WebElement hockeyRadioBtn = driver.findElement(By.xpath("//input[@id='hockey']"));
+        Thread.sleep(3000);// after we learn selenium waits we had better not use theis method;
         hockeyRadioBtn.click();
 
         //4. Verify “Hockey” radio button is selected after clicking.
@@ -28,6 +30,5 @@ public class Task2_RadioButton {
             System.err.println("Button is not selected and verification FAILED!!!");
         }
 
-        //USE XPATH LOCATOR FOR ALL WebElement LOCATORS
     }
 }

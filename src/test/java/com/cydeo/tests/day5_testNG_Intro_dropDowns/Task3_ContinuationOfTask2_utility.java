@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class Task3_ContinuationOfTask2 {
+public class Task3_ContinuationOfTask2_utility {
     public static void main(String[] args) throws InterruptedException {
         //TC #3: Radiobutton handling_Continue
         //1. Open Chrome browser

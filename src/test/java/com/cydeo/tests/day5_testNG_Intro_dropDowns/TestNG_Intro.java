@@ -20,6 +20,11 @@ public class TestNG_Intro {
     @Test(priority = 2)
     public void test2() {
         System.out.println("Test2 is running...");
+        //AsserTrue
+        String actual = "apple";
+        String expected = "apple3";
+        Assert.assertTrue(actual.equals(expected));
+
     }
     @BeforeClass
     public void setUp(){

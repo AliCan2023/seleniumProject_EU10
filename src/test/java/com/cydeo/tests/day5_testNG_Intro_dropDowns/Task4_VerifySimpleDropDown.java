@@ -13,8 +13,9 @@ import java.util.concurrent.TimeUnit;
 
 public class Task4_VerifySimpleDropDown {
     WebDriver driver;
+
     @BeforeMethod
-    public void setUpMethod(){
+    public void setUpMethod() {
         //1. Open Chrome browser
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
@@ -25,7 +26,7 @@ public class Task4_VerifySimpleDropDown {
 
     }
 
-    @Test
+    @Test(priority = 1)
     public void simpleDropDownTest() {
 
         //3. Verify “Simple dropdown” default selected value is correct
@@ -33,21 +34,27 @@ public class Task4_VerifySimpleDropDown {
 
         WebElement currentlySelectedOption = simpleDropDown.getFirstSelectedOption();
         String actualSimpleDropDownText = currentlySelectedOption.getText();
-        String expectedSimpleDropDownText= "Please select an option";
+        String expectedSimpleDropDownText = "Please select an option";
         //System.out.println(actualSimpleDropDownText);
 
         //Expected: “Please select an option”
-        Assert.assertEquals(actualSimpleDropDownText,expectedSimpleDropDownText,"Text is not matching!");
-
-        //4. Verify “State selection” default selected value is correct
-        Select stateDropdown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
-        //Expected: “Select a State”
-        String expectedStateDropdownText = "Select a State";
-        String actualStateDropdownText=stateDropdown.getFirstSelectedOption().getText();
-
-        Assert.assertEquals(actualStateDropdownText,expectedStateDropdownText);
-        //Assert.assertEquals(stateDropdown.getFirstSelectedOption().getText(),"Select a State");
-
-
+        Assert.assertEquals(actualSimpleDropDownText, expectedSimpleDropDownText, "Text is not matching!");
     }
-}
+
+
+
+    @Test(priority = 2)
+        public void simpleDropdownTest1 () {
+            //4. Verify “State selection” default selected value is correct
+            Select stateDropdown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
+            //Expected: “Select a State”
+            String expectedStateDropdownText = "Select a State";
+            String actualStateDropdownText = stateDropdown.getFirstSelectedOption().getText();
+
+            Assert.assertEquals(actualStateDropdownText, expectedStateDropdownText);
+            //Assert.assertEquals(stateDropdown.getFirstSelectedOption().getText(),"Select a State");
+
+
+        }
+    }
+

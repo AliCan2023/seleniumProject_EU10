@@ -25,12 +25,20 @@ public class Task4_iFramePractice {
             driver.get("https://practice.cydeo.com/iframe");
 
         }
-
+// the followings are skip test methods:
+    //1. directly delete the annotation of the Test you want to skip;
+    //2. using @Ignore annotation to skip the tes;
         @Test
         public void iframe_test() {
-            // switch driver's focus to iframe;
+            // We need to switch driver's focus to iframe;
             // option#1- switching to iframe using id attribute value;
-            driver.switchTo().frame("mce_0_ifr");// we also can use index number if we happen to find more than one iframe;
+            //driver.switchTo().frame("mce_0_ifr");// we also can use index number if we happen to find more than one iframe;
+
+            //Option2#-passing index number of iframe;
+            //driver.switchTo().frame(0);
+
+            //Option#3- locate as a web element and pass in frame() method;
+             driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='mce_0_ifr']")));
 
             // locate the page tag
             WebElement yourContentGOesHereText = driver.findElement(By.xpath("//p"));// we could get NoSuchElementException here if  we didn't use switchTo();method to redirect the driver focus to iframe  to locate the element.
@@ -49,9 +57,6 @@ public class Task4_iFramePractice {
             Assert.assertTrue(headerText.isDisplayed());
 
         }
-
-
-
 
     }
 

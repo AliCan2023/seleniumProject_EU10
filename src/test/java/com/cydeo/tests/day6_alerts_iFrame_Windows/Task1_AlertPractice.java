@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class Task1_AlertPractice1 {
+public class Task1_AlertPractice {
         WebDriver driver;
 
         @BeforeMethod

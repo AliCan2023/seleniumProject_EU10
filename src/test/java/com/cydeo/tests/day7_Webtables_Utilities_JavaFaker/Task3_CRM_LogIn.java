@@ -1,6 +1,7 @@
 package com.cydeo.tests.day7_Webtables_Utilities_JavaFaker;
 
 import com.cydeo.utilities.BrowserUtility;
+import com.cydeo.utilities.CRM_Utility;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,7 +21,6 @@ public class Task3_CRM_LogIn {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(9, TimeUnit.SECONDS);
     }
-
 
     @Test
     public void crm_login_test() {
@@ -47,9 +47,47 @@ public class Task3_CRM_LogIn {
 //6. Verify title is as expected:
         //Expected: Portal(here in my web browser it never appears as Portal but"My tasks" )
 
+        //BrowserUtility.verifyTitle(driver, "My tasks");// i think it depends on the ip you login and changes the title;
+
+
+    }
+
+    @Test
+    public void crm_login_test_1() {
+
+//2. Goto:http://login1.nextbasecrm.com/
+        driver.get("http://login1.nextbasecrm.com/");
+
+// jus call the method form the CRM_utility
+        CRM_Utility.crm_login(driver);
+
+
+//6. Verify title is as expected:
+        //Expected: Portal(here in my web browser it never appears as Portal but"My tasks" )
+
         BrowserUtility.verifyTitle(driver, "My tasks");// i think it depends on the ip you login and changes the title;
 
 
     }
+
+    @Test
+    public void crm_login_test_2() {
+
+//2. Goto:http://login1.nextbasecrm.com/
+        driver.get("http://login1.nextbasecrm.com/");
+
+// jus call the method form the CRM_utility
+        CRM_Utility.crm_login(driver,"helpdesk2@cybertekschool.com","UserUser");
+
+
+//6. Verify title is as expected:
+        //Expected: Portal(here in my web browser it never appears as Portal but"My tasks" )
+
+        BrowserUtility.verifyTitle(driver, "Portal");// i think it depends on the ip you login and changes the title;
+
+
+    }
+
+
 }
 

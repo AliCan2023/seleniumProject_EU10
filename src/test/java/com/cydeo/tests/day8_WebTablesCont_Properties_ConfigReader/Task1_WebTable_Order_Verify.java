@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class Task1_WebTable_Order_Verifier {
+public class Task1_WebTable_Order_Verify {
     WebDriver driver;
     // 1. Goto:https://practice.cydeo.com/web-tables
 

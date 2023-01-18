@@ -42,6 +42,7 @@ public class Task1_WebTable_Order_Verify {
 
         //3. VerifyBobMartin’s order date is as expected;
         //Expected: 12/31/2021
+        //Alternative BobMartinDateCell locator = "//td[.='Bob Martin']/../td[5]"
         WebElement BobMartinOrderDateCell
                 = driver.findElement(By.xpath("//table[@id='ctl00_MainContent_orderGrid']//td[.='Bob Martin']/following-sibling::td[3]"));
         String actualBobMartinDate = BobMartinOrderDateCell.getText();

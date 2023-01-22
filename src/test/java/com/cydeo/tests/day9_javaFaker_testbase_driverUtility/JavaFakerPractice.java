@@ -3,6 +3,8 @@ package com.cydeo.tests.day9_javaFaker_testbase_driverUtility;
 import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
 
+import java.util.Locale;
+
 public class JavaFakerPractice {
 
 
@@ -38,6 +40,11 @@ public class JavaFakerPractice {
 
         System.out.println("faker.chuckNorris().fact() = "
                 + faker.chuckNorris().fact().replaceAll("Chuck Norris","Muhtar"));
+
+        Faker faker1 = new Faker(new Locale("tr"));
+
+        System.out.println("faker1.name().firstName() = " + faker1.name().firstName());
+
 
     }
 }

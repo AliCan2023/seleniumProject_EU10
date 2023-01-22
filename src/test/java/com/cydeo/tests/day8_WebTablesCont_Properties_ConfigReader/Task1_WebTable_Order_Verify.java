@@ -1,4 +1,4 @@
-package com.cydeo.tests.day5_testNG_Intro_dropDowns.day8_WebTablesCont_Properties_ConfigReader;
+package com.cydeo.tests.day8_WebTablesCont_Properties_ConfigReader;
 
 import com.cydeo.utilities.WebDriverFactory;
 import com.cydeo.utilities.WebTableUtility;
@@ -95,7 +95,6 @@ public class Task1_WebTable_Order_Verify {
     public void orderDate_Verify_Test(){
 
         WebTableUtility.orderVerify(driver,"Alexandra Gray","04/15/2021");
-
 
     }
 }

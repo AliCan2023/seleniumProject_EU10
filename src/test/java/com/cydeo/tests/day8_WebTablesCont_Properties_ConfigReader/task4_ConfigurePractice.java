@@ -32,11 +32,15 @@ public class task4_ConfigurePractice {
     public void google_search_test(){
         //3- Write “apple” in search box
         WebElement googleSearchBox= driver.findElement(By.xpath("//input[@name='q']"));
-        googleSearchBox.sendKeys("apple" + Keys.ENTER);
+        //googleSearchBox.sendKeys("apple" + Keys.ENTER);
+        googleSearchBox.sendKeys(ConfigurationReader.getProperty("searchValue") + Keys.ENTER);
         //4- Verify title:
         //Expected: apple - Google Search
 
-        String expectedTitle = "apple - Google'da Ara";
+        //String expectedTitle = "apple - Google'da Ara";
+        // let's make the expected Title dynamic;
+        String expectedTitle = ConfigurationReader.getProperty("searchValue")+ " - Google'da Ara";
+
         String actualTitle = driver.getTitle();
 
         Assert.assertEquals(actualTitle,expectedTitle);

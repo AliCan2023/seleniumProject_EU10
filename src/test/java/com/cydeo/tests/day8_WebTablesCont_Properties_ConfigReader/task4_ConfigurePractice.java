@@ -1,19 +1,15 @@
 package com.cydeo.tests.day8_WebTablesCont_Properties_ConfigReader;
 
 import com.cydeo.utilities.ConfigurationReader;
-import com.cydeo.utilities.WebDriverFactory;
+import com.cydeo.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
-
 public class task4_ConfigurePractice {
-    WebDriver driver;
+   /* WebDriver driver;
     //1- Open a chrome browser
     //2- Go to: https://google.com
 
@@ -25,13 +21,17 @@ public class task4_ConfigurePractice {
         driver = WebDriverFactory.getDriver(browserType);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
-        driver.get("https://google.com");
+
     }
+
+    */
 
     @Test
     public void google_search_test(){
+        // Driver.getDriver()--->driver;
+        Driver.getDriver().get("https://google.com");
         //3- Write “apple” in search box
-        WebElement googleSearchBox= driver.findElement(By.xpath("//input[@name='q']"));
+        WebElement googleSearchBox= Driver.getDriver().findElement(By.xpath("//input[@name='q']"));
         //googleSearchBox.sendKeys("apple" + Keys.ENTER);
         googleSearchBox.sendKeys(ConfigurationReader.getProperty("searchValue") + Keys.ENTER);
         //4- Verify title:
@@ -41,7 +41,7 @@ public class task4_ConfigurePractice {
         // let's make the expected Title dynamic;
         String expectedTitle = ConfigurationReader.getProperty("searchValue")+ " - Google'da Ara";
 
-        String actualTitle = driver.getTitle();
+        String actualTitle = Driver.getDriver().getTitle();
 
         Assert.assertEquals(actualTitle,expectedTitle);
 

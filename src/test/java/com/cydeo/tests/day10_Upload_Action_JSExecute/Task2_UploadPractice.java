@@ -28,7 +28,7 @@ public class Task2_UploadPractice {
         uploadButton.click();
 
         //4. Assert:
-        //-File uploaded text is displayed on the page
+        //-'File uploaded' text is displayed on the page
         WebElement fileUploadedHeader = Driver.getDriver().findElement(By.tagName("h3"));
         Assert.assertTrue(fileUploadedHeader.isDisplayed());
 

@@ -16,6 +16,7 @@ public class Task6_JavaScriptExecutor {
         Driver.getDriver().get("https://practice.cydeo.com/infinite_scroll");
 
         // 3- Use below JavaScript method and scroll
+        //JavaScript method to use : window.scrollBy(0,0)
         //((JavascriptExecutor) Driver.getDriver()).executeScript("window.scrollBy(0,0)");//downcast driverType to JavaScriptExecutor interface;
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
@@ -29,7 +30,7 @@ public class Task6_JavaScriptExecutor {
             BrowserUtility.sleep(1);
             js.executeScript("window.scrollBy(0,-750)");
         }
-        //JavaScript method to use : window.scrollBy(0,0)
+
 
 
 

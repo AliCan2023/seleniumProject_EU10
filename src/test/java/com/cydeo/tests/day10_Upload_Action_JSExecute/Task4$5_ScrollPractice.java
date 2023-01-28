@@ -1,5 +1,6 @@
 package com.cydeo.tests.day10_Upload_Action_JSExecute;
 
+import com.cydeo.utilities.BrowserUtility;
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -10,7 +11,7 @@ import org.testng.annotations.Test;
 public class Task4$5_ScrollPractice {
 
     @Test
-    public void scroll_practice_test(){
+    public void scroll_practice_test() {
 
         //1- Open a chrome browser
         //2- Go to: https://practice.cydeo.com/
@@ -18,7 +19,7 @@ public class Task4$5_ScrollPractice {
 
         //3- Scroll down to “Powered by CYDEO”
         //first create a locator for the text;
-       // WebElement scrollDownText = Driver.getDriver().findElement(By.xpath("//div[@style='text-align: center;']"));
+        // WebElement scrollDownText = Driver.getDriver().findElement(By.xpath("//div[@style='text-align: center;']"));
 
         // create an actions object
         Actions actions = new Actions(Driver.getDriver());
@@ -41,7 +42,7 @@ public class Task4$5_ScrollPractice {
 
         // 2- Scroll back up to “Home” link using PageUP button
 
-        actions.sendKeys(Keys.PAGE_UP,Keys.PAGE_UP,Keys.PAGE_UP,Keys.PAGE_UP).perform();
+        actions.sendKeys(Keys.PAGE_UP, Keys.PAGE_UP, Keys.PAGE_UP, Keys.PAGE_UP).perform();
         //actions.sendKeys(Keys.PAGE_UP).perform();
 
         //Driver.getDriver().close(); //throws: NoSuchSessionException: invalid session id
@@ -53,11 +54,33 @@ public class Task4$5_ScrollPractice {
     }
 
 
-        @Test
-                public void test2(){
+    @Test
+    public void test2() {
 
         Driver.getDriver().get("https://google.com");
+        BrowserUtility.sleep(3);
+        Driver.closeDriver();
 
     }
+
+    @Test
+    public void test3() {
+
+        Driver.getDriver().get("https://apple.com");
+        BrowserUtility.sleep(3);
+        Driver.closeDriver();
+
     }
+    @Test
+    public void test4() {
+
+        Driver.getDriver().get("https://tesla.com");
+        BrowserUtility.sleep(3);
+        //Driver.closeDriver();
+        System.out.println(Driver.getDriver().getWindowHandle());
+
+
+    }
+
+}
 

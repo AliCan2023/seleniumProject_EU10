@@ -1,4 +1,4 @@
-package com.cydeo.pages;
+package com.cydeo.tests.day10_Upload_Action_JSExecute.pages;
 
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.WebElement;

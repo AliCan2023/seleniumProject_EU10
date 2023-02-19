@@ -1,7 +1,7 @@
 package com.cydeo.tests.day12_PageObjectModel_Synchronization;
 
-import com.cydeo.tests.day10_Upload_Action_JSExecute.pages.DynamicLoad1Page;
-import com.cydeo.tests.day10_Upload_Action_JSExecute.pages.DynamicLoad7Page;
+import com.cydeo.pages.DynamicLoad1Page;
+import com.cydeo.pages.DynamicLoad7Page;
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;

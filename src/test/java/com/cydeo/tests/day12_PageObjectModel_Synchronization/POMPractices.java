@@ -1,6 +1,6 @@
 package com.cydeo.tests.day12_PageObjectModel_Synchronization;
 
-import com.cydeo.tests.day10_Upload_Action_JSExecute.pages.LibraryLoginPage;
+import com.cydeo.pages.LibraryLoginPage;
 import com.cydeo.utilities.Driver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;

@@ -1,4 +1,4 @@
-package com.cydeo.tests.day10_Upload_Action_JSExecute;
+package com.cydeo.tests.day6_alerts_iFrame_Windows.day10_Upload_Action_JSExecute;
 
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;

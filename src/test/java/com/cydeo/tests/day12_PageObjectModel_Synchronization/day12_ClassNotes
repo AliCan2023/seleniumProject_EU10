@@ -85,5 +85,5 @@ regular email format :
 
 - How it works?
     - Every time we want to use WebElement located using @FindBy annotation, it will be re-located in the line we are using it.
-    - Basically it will automatically do a "fressness check" which will eliminate the StaleElementReferenceException
+    - Basically it will automatically do a "freshness check" which will eliminate the StaleElementReferenceException
 

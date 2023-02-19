@@ -47,7 +47,8 @@ to their respective variables.
     @FindBy(xpath= " //div[.='Please enter a valid email address.']/div")
     public WebElement enterValidEMailErrorMessage;
 
-    @FindBy(xpath = "//div[@class='alert alert-danger']")
+    //@FindBy(xpath = "//div[@class='alert alert-danger']")
+    @FindBy(xpath = "//div[.='Sorry, Wrong Email or Password']")
     public WebElement wrongEMailOrPassWordErrorMessage;
 
 

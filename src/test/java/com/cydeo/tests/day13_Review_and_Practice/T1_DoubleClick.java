@@ -35,8 +35,6 @@ public class T1_DoubleClick {
 
         Driver.closeDriver();
 
-
-
     }
 
 }

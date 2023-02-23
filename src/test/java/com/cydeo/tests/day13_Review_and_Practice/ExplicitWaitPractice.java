@@ -18,14 +18,14 @@ public class ExplicitWaitPractice {
     DynamicControlsPage dynamicControlsPage;
 
     @BeforeMethod
-    public void setupMethod(){
+    public void setupMethod() {
         Driver.getDriver().get("https://practice.cydeo.com/dynamic_controls");
         dynamicControlsPage = new DynamicControlsPage();
 
     }
 
     @Test
-    public void remove_button_test(){
+    public void remove_button_test() {
 
         // 3- Click to “Remove” button
         dynamicControlsPage.removeButton.click();
@@ -45,7 +45,7 @@ public class ExplicitWaitPractice {
             Assert.assertTrue(!dynamicControlsPage.checkbox.isDisplayed());
             // assertFalse method will pass the test if the boolean value returned is : false
             Assert.assertFalse(dynamicControlsPage.checkbox.isDisplayed());
-        }catch (NoSuchElementException n){
+        } catch (NoSuchElementException n) {
             Assert.assertTrue(true);
         }
 
@@ -56,6 +56,34 @@ public class ExplicitWaitPractice {
         Assert.assertTrue(dynamicControlsPage.message.getText().equals("It's gone!"));
     }
 
+    @Test
+    public void enable_button_test() {
+
+        // 3- Click to “Enable” button
+//        System.out.println("dynamicControlsPage.inputBox.isEnabled() = "
+//                + dynamicControlsPage.inputBox.isEnabled());
+       dynamicControlsPage.enableButton.click();
+        System.out.println("dynamicControlsPage.inputBox.isEnabled() = "
+                + dynamicControlsPage.inputBox.isEnabled());//false
+
+        //4- Wait until “loading bar disappears”
+        //Calling  out explicit wait method to wait loadingBar to be disappeared;
+        BrowserUtility.waitForInvisibilityOf(dynamicControlsPage.loadingBar);
+
+        System.out.println("dynamicControlsPage.inputBox.isEnabled() = "
+                + dynamicControlsPage.inputBox.isEnabled());//true
+
+        //5- Verify:
+        //a . Input box is enabled.
+        Assert.assertTrue(dynamicControlsPage.inputBox.isEnabled());
+
+        //b. “It’s enabled!” message is displayed.
+        Assert.assertTrue(dynamicControlsPage.message.isDisplayed());
+        System.out.println(dynamicControlsPage.message.getText());
+
+        //Check the String value is matching as expected:"It's enabled!";
+        Assert.assertTrue(dynamicControlsPage.message.getText().equals("It's enabled!"));
+    }
 
 
 }

@@ -25,7 +25,7 @@ public class Task4_iFramePractice {
             driver.get("https://practice.cydeo.com/iframe");
 
         }
-// the followings are skip test methods:
+     // the followings are skip test methods:
     //1. directly delete the annotation of the Test you want to skip;
     //2. using @Ignore annotation to skip the tes;
         @Test
@@ -41,7 +41,8 @@ public class Task4_iFramePractice {
              driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='mce_0_ifr']")));
 
             // locate the page tag
-            WebElement yourContentGOesHereText = driver.findElement(By.xpath("//p"));// we could get NoSuchElementException here if  we didn't use switchTo();method to redirect the driver focus to iframe  to locate the element.
+            WebElement yourContentGOesHereText = driver.findElement(By.xpath("//p"));// we could get NoSuchElementException here if  we didn't use switchTo();
+            // method to redirect the driver focus to iframe  to locate the element.
 
             //4. Assert: “Your content goes here.” Text is displayed.
             Assert.assertTrue(yourContentGOesHereText.isDisplayed(),"It doesn't show what we expect...");
@@ -51,7 +52,7 @@ public class Task4_iFramePractice {
 
             driver.switchTo().parentFrame();
 
-            WebElement headerText = driver.findElement(By.xpath("//h3"));// there is only one h3 in this cas;
+            WebElement headerText = driver.findElement(By.xpath("//h3"));// there is only one h3 in this case;
 
             // assertion of header text is displayed or not;
             Assert.assertTrue(headerText.isDisplayed());

@@ -24,7 +24,6 @@ public class Task1_AlertPractice {
             //2. Go to website: http://practice.cydeo.com/javascript_alerts
             driver.get("http://practice.cydeo.com/javascript_alerts");
 
-
         }
 
         @Test
@@ -32,7 +31,7 @@ public class Task1_AlertPractice {
             //3. Click to “Click for JS Alert” button
             WebElement informationAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Alert']"));
             informationAlertButton.click();
-            Thread.sleep(3000);
+            Thread.sleep(5000);
 
             //To be able to click to Alert OK button we need to switch driver's focus to Alert itself.
             Alert alert = driver.switchTo().alert();

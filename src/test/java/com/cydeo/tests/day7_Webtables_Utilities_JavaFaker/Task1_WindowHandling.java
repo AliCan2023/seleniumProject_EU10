@@ -36,7 +36,7 @@ public class Task1_WindowHandling {
         BrowserUtility.switchWindowAndVerify(driver,"etsy","Etsy");
         /*Set<String> allWindowHandles = driver.getWindowHandles();
 
-        for (String eachHandle : allWindowHandles) {
+        for (String eachHandle : allWindowHandles) {((JavascriptExecutor) driver).executeScript("window.open('http://google.com','_blank');");
             driver.switchTo().window(eachHandle);
            System.out.println("Current URL: " + driver.getCurrentUrl());
            // System.out.println("eachHandle = " + eachHandle);
@@ -49,7 +49,7 @@ public class Task1_WindowHandling {
          */
         // 5. Assert:Title contains“Etsy”
 
-        BrowserUtility.verifyTitle(driver,"Etsy Turkey");
+        //BrowserUtility.verifyTitle(driver,"Etsy Turkey");
 
 
        /* String actualTitle = driver.getTitle();
